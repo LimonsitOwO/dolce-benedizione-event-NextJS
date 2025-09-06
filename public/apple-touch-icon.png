@@ -1,0 +1,33 @@
+<!-- This would be a PNG file in a real implementation. For now I'll create a placeholder SVG that can be converted -->
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="appleIconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CD853F" />
+      <stop offset="100%" stop-color="#8B4513" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo redondeado iOS style -->
+  <rect width="180" height="180" rx="40" fill="url(#appleIconGradient)" />
+  
+  <!-- Pastel grande -->
+  <rect x="45" y="112" width="90" height="34" rx="12" fill="#FFF8E7" />
+  <rect x="56" y="90" width="68" height="22" rx="6" fill="#FFF8E7" />
+  <rect x="67" y="68" width="46" height="22" rx="6" fill="#FFF8E7" />
+  
+  <!-- Cereza grande -->
+  <circle cx="90" cy="51" r="8" fill="#DC2626" />
+  <path d="M90 35 Q95 25 102 30" stroke="#16A34A" stroke-width="4" fill="none" stroke-linecap="round" />
+  
+  <!-- Chispitas decorativas -->
+  <circle cx="68" cy="101" r="3" fill="#FFD700" />
+  <circle cx="112" cy="101" r="3" fill="#FFD700" />
+  <circle cx="78" cy="79" r="3" fill="#FFD700" />
+  <circle cx="102" cy="79" r="3" fill="#FFD700" />
+  
+  <!-- Líneas de conexión decorativas -->
+  <g opacity="0.3">
+    <path d="M30 60 Q50 40 70 50" stroke="#FFF8E7" stroke-width="3" stroke-dasharray="6,4" fill="none" />
+    <path d="M110 50 Q130 40 150 60" stroke="#FFF8E7" stroke-width="3" stroke-dasharray="6,4" fill="none" />
+  </g>
+</svg>
