@@ -97,9 +97,7 @@ export function Footer() {
             <div className="col-span-2">
               <div className="flex items-center space-x-4 mb-6">
                 <SweetConnectionsLogo 
-                  size={56}
-                  primaryColor={currentTheme.colors.textLight}
-                  secondaryColor={currentTheme.colors.textLight}
+                  size={124}
                 />
                 <div>
                   <h4 className="text-2xl font-bold" style={{ color: currentTheme.colors.textLight }}>

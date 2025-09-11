@@ -51,9 +51,7 @@ export function UpdatedHeroSection() {
         <div className="mb-8">
           <div className="mb-6 flex justify-center">
             <SweetConnectionsLogo 
-              size={120}
-              primaryColor={currentTheme.colors.button}
-              secondaryColor={currentTheme.colors.textSecondary}
+              size={256}
             />
           </div>
           

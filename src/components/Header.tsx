@@ -23,9 +23,7 @@ export function Header() {
               <div className="absolute -inset-2 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"
                 style={{ backgroundColor: currentTheme.colors.button }}></div>
               <SweetConnectionsLogo
-                size={48}
-                primaryColor={currentTheme.colors.button}
-                secondaryColor={currentTheme.colors.textSecondary}
+                size={72}
                 className="relative z-10 transform group-hover:scale-105 transition-transform duration-300"
               />
             </div>

@@ -24,6 +24,23 @@ export interface Theme {
 }
 
 const themes: Record<string, Theme> = {
+  rosadoAmarillo: {
+    name: 'Rosa y Amarillo Pastel',
+    colors: {
+      primary: '#FEF7F0',      // Fondo muy claro (crema rosado)
+      secondary: '#F9E8DA',    // Fondo claro (melocotón suave)
+      accent: '#F5D7C0',       // Fondo medio (rosa crema)
+      dark: '#8B4A6B',         // Fondo oscuro (rosa marrón)
+      
+      textPrimary: '#2D1B1F',  // Texto principal (muy oscuro con toque rosa)
+      textSecondary: '#6B4A54', // Texto secundario (rosa marrón medio)
+      textLight: '#FEF7F0',     // Texto claro (para fondos oscuros)
+      
+      border: '#E91E63',       // Bordes rosa vibrante
+      button: '#FFB6C1',       // Botones rosa claro
+      buttonText: '#2D1B1F'    // Texto de botones oscuro
+    }
+  },
   caramelo: {
     name: 'Caramelo Dorado',
     colors: {
@@ -108,23 +125,6 @@ const themes: Record<string, Theme> = {
       button: '#DAA520',       // Botones dorados
       buttonText: '#FFFFFF'    // Texto de botones
     }
-  },
-  rosadoAmarillo: {
-    name: 'Rosa y Amarillo Pastel',
-    colors: {
-      primary: '#FEF7F0',      // Fondo muy claro (crema rosado)
-      secondary: '#F9E8DA',    // Fondo claro (melocotón suave)
-      accent: '#F5D7C0',       // Fondo medio (rosa crema)
-      dark: '#8B4A6B',         // Fondo oscuro (rosa marrón)
-      
-      textPrimary: '#2D1B1F',  // Texto principal (muy oscuro con toque rosa)
-      textSecondary: '#6B4A54', // Texto secundario (rosa marrón medio)
-      textLight: '#FEF7F0',     // Texto claro (para fondos oscuros)
-      
-      border: '#E91E63',       // Bordes rosa vibrante
-      button: '#FFB6C1',       // Botones rosa claro
-      buttonText: '#2D1B1F'    // Texto de botones oscuro
-    }
   }
 };
 
@@ -138,11 +138,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeName, setThemeName] = useState('caramelo');
+  // Cambiado: el tema por defecto es ahora 'rosadoAmarillo'
+  const [themeName, setThemeName] = useState('rosadoAmarillo');
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    if (saved && themes[saved]) {
+    // Si no hay tema guardado o el tema guardado no existe, usar rosa como predeterminado
+    if (!saved || !themes[saved]) {
+      setThemeName('rosadoAmarillo');
+      localStorage.setItem('theme', 'rosadoAmarillo');
+    } else {
       setThemeName(saved);
     }
   }, []);
